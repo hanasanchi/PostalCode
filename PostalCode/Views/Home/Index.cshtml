@@ -1,0 +1,28 @@
+﻿@model PostalCode.ViewModels.HomeView
+
+@{
+    ViewBag.Title = "ホームページ";
+}
+
+<h4>@ViewBag.Title</h4>
+<br />
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="container-fluid">
+        <div class="col-md-12 text-danger">
+            <h6>@Html.DisplayFor(m => m.InfoMessage)</h6>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+        <div class="form-group">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 text-center">
+                <input type="submit" name="BTNDummy" value="ホーム" class="btn btn-primary btn-block" />
+            </div>
+        </div>
+    </div>
+}
